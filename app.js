@@ -7,7 +7,6 @@ window.addEventListener('load', ()=>{
     let Icon=document.querySelector('.icons');
 
     if(navigator.geolocation){
-        alert("works");
         navigator.geolocation.getCurrentPosition(position => {
             long=position.coords.longitude;
             lat=position.coords.latitude;
@@ -34,6 +33,6 @@ window.addEventListener('load', ()=>{
         });
     }
     else{
-        
+        alert("Your Device isn't Supported :(");
     }
 });
