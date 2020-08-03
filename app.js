@@ -7,6 +7,7 @@ window.addEventListener('load', ()=>{
     let Icon=document.querySelector('.icons');
 
     if(navigator.geolocation){
+        alert("works");
         navigator.geolocation.getCurrentPosition(position => {
             long=position.coords.longitude;
             lat=position.coords.latitude;
@@ -23,11 +24,16 @@ window.addEventListener('load', ()=>{
                 temperatureDescription.textContent = description;
                 locationTimezone.textContent = city_name;
                 Icon.src="icons/"+icon+".png";
-
+                var x,i;
+                x=document.querySelectorAll('.show');
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.opacity = "1";
+                }
             });
+
         });
     }
     else{
-        alert("Doesn't Support");
+        
     }
 });

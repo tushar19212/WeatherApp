@@ -39,3 +39,8 @@ body{
 .degree-section h2{
     font-size: 40px;
 }
+
+.show{
+    opacity: 0;
+    transition: 0.5s ease;
+}
