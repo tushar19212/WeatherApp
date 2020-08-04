@@ -8,12 +8,18 @@ h1{
     font-size: 50px;
     transform: translateY(-30px);
     font-weight: bold;
+    transform: translateY(20px);
+    display: block;
+    /* background-color: pink; */
 }
 .h1After{
     color: white;
     display: block;
     font-size: 14px;
     transition: 0.5s ease-out;
+    margin: 30px;
+    margin-bottom: 40px;
+    height: 40px;
 }
 body{
     height: 100vh;
@@ -29,11 +35,12 @@ body{
 }
 
 .location, .temperature{
-    height: 30vh;
+    height: 25vh;
     width: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transform: translateY(-40px);
 }
 
 .temperature{   
@@ -61,7 +68,44 @@ body{
     opacity: 0;
     transition: 1s ease;
 }
+.search-location{
+    transform: translateY(-40px);
+}
+.search-location #search{
+    display: inline-block;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 6px;
+    text-decoration: none;
+    height: 25px;
+    /* transform: translateY(-2px); */
+    background-color: rgb(56, 104, 158);
+    color: white;
+    box-shadow: 0em;
+}
+.icons{
+    animation: fade 3s ease-in-out infinite;
+}
+.search-location #textbox{
+    border-radius: 6px;
+    text-decoration: none;
+    height: 30px;
+    width: 300px;
+    font-size: 15px;
+    padding-left: 10px;
+}
 
+@keyframes fade{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 @keyframes animate{
     0%{
