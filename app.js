@@ -64,10 +64,11 @@ document.querySelector('#search').addEventListener('click',()=>{
                 check=1;
                 myfunc(value.lat,value.lon);
             }
-            if(check=0)
+         
+        });
+        if(check===0)
             {
                 $('#result').append('No Results Found');
             }
-        });
     });
 });
