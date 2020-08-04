@@ -58,7 +58,7 @@ document.querySelector('#search').addEventListener('click',()=>{
     $('#result').html('');
     var searchField=$('#textbox').val();
     var expression= new RegExp(searchField,"i");
-    $.getJSON('cities_all.json',function(data){
+    $.getJSON('cities_20000.json',function(data){
         $.each(data,function(key,value){
             if(value.city_name.search(expression) != -1 && check===0){
                 check=1;
