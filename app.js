@@ -28,6 +28,7 @@ window.addEventListener('load', ()=>{
                 for (i = 0; i < x.length; i++) {
                     x[i].style.opacity = "1";
                 }
+                document.querySelector('.h1After').style.opacity="0";
             });
 
         });

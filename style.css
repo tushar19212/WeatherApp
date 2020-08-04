@@ -9,23 +9,28 @@ h1{
     transform: translateY(-30px);
     font-weight: bold;
 }
-
+.h1After{
+    color: white;
+    display: block;
+    font-size: 14px;
+    transition: 0.5s ease-out;
+}
 body{
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
     color: white;
-    background: linear-gradient(-45deg,rgb(84, 190, 204), rgb(27, 101, 187));
+    background: linear-gradient(-45deg,rgb(84, 190, 204), rgb(56, 104, 158));
     animation: animate 3s ease-in-out infinite;
     background-size: 400% 400%;
 }
 
 .location, .temperature{
     height: 30vh;
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -33,6 +38,10 @@ body{
 
 .temperature{   
     flex-direction: column;
+}
+.temperature-description{
+    width: 100%;
+    text-align: center;
 }
 .degree-section{
     display: flex;
@@ -63,5 +72,14 @@ body{
     }
     100%{
         background-position: 0 50%;
+    }
+}
+
+
+@media screen and (max-width:1200px)
+{    
+    .location, .temperature{
+        height: 30vh;
+        width: 60%;
     }
 }
