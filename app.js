@@ -17,16 +17,13 @@ function myfunc(latvalue,longvalue){
         console.log(data);
         const {city_name} = data;
         const {temp}=data.data[0];
+        celsius=temp;
         const {description,icon}=data.data[0].weather;
         //Set DOM Elements
         temperatureDegree.textContent = temp;
         temperatureDescription.textContent = description;
         locationTimezone.textContent = city_name;
         Icon.src="icons/"+icon+".png";
-        if(icon==="r02")
-        {
-            document.getElementById("BODY").style.backgroundColor='purple';
-        }
         var x,i;
         x=document.querySelectorAll('.show');
         for (i = 0; i < x.length; i++) {
