@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <title>Your Weather App</title>
 </head>
 <body id="BODY">
@@ -29,21 +30,29 @@
         <img class="icons show" src="" width="100" height="100"> </img>
     </div>
     <div class="temperature show">
+        <h2>Current Temperature</h2>
         <div class="degree-section show">
             <h2 class="temperature-degree show"></h2>
             <span>C</span>
         </div>
         <div class="temperature-description show">It's Cold</div>
-        <!-- <div class="MaxMin">
-            <h3 class="max"></h3>
+    </div>
+    <div class="MaxMin show"> 
+        <div>
+            <h3>Max Temperature</h3>
             <span>
-                C
+                <h4 class="max">34</h4>C
             </span>
-            <h3 class="min"></h3>
+        </div>
+        <div>
+            <h3>Min Temperature</h3>
             <span>
-                C
+                <h4 class="min">34</h4>C
             </span>
-        </div> -->
+        </div>
+    </div>
+    <div id="canvas">    
+        <canvas id="myChart" width="400px" height="200px"></canvas>
     </div>
     <script src="app.js"></script>
 </body>
