@@ -29,7 +29,8 @@ body{
     align-items: center;
     font-family: 'Poppins';
     color: white;
-    background: linear-gradient(-45deg,rgb(84, 190, 204), rgb(56, 104, 158));
+    background: linear-gradient(-45deg,rgb(52, 179, 218), rgb(2, 120, 189));
+    /* background: linear-gradient(-45deg,#4b7c95,#143f57); */
     animation: animate 3s ease-in-out infinite;
     background-size: 400% 400%;
 }

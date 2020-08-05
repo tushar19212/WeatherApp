@@ -14,16 +14,19 @@ function myfunc(latvalue,longvalue){
     fetch(api).then(response => {
             return response.json();
     }).then(data =>{
-        // console.log(data);
+        console.log(data);
         const {city_name} = data;
         const {temp}=data.data[0];
-        celsius=temp;
         const {description,icon}=data.data[0].weather;
         //Set DOM Elements
         temperatureDegree.textContent = temp;
         temperatureDescription.textContent = description;
         locationTimezone.textContent = city_name;
         Icon.src="icons/"+icon+".png";
+        if(icon==="r02")
+        {
+            document.getElementById("BODY").style.backgroundColor='purple';
+        }
         var x,i;
         x=document.querySelectorAll('.show');
         for (i = 0; i < x.length; i++) {
@@ -33,6 +36,8 @@ function myfunc(latvalue,longvalue){
        
     });
 }
+
+//#334954 (gray) 486675
 
 window.addEventListener('load', ()=>{
     if(navigator.geolocation){
