@@ -9,12 +9,24 @@ const degreeSpan=document.querySelector('.temperature span');
 let check=0;
 let celsius;
 
+async function getData(latvalue,longvalue){
+    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=10&key=e3ce543b242141de941a30386d48d39a`;
+    fetch(api).then(response => {
+        return response.json();
+    }).then(data => {
+        for(let i = 0; i<10; i++){
+            console.log(data.data[i].valid_date);
+        }
+    });
+        
+}
+
 function myfunc(latvalue,longvalue){
     const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=1&key=e3ce543b242141de941a30386d48d39a`;
     fetch(api).then(response => {
             return response.json();
     }).then(data =>{
-        console.log(data);
+        // console.log(data);
         const {city_name} = data;
         const {temp}=data.data[0];
         celsius=temp;
@@ -40,6 +52,7 @@ window.addEventListener('load', ()=>{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
             myfunc(position.coords.latitude,position.coords.longitude);
+            getData(position.coords.latitude,position.coords.longitude);
         });
     }
     else{

@@ -2,91 +2,90 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 120%;
 }
+
 h1{
     font-size: 50px;
-    transform: translateY(-30px);
-    font-weight: bold;
-    transform: translateY(20px);
-    display: block;
-    /* background-color: pink; */
+    text-align: center;
+    margin-top: 30px;
 }
+
 .h1After{
     color: white;
-    display: block;
-    font-size: 14px;
-    transition: 0.5s ease-out;
+    text-align: center;
     margin: 30px;
-    margin-bottom: 40px;
-    height: 40px;
+    margin-top: 10px;
 }
+
 body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     font-family: 'Poppins';
     color: white;
+    width: 100%;
     background: linear-gradient(-45deg,rgb(52, 179, 218), rgb(2, 120, 189));
-    /* background: linear-gradient(-45deg,#4b7c95,#143f57); */
     animation: animate 3s ease-in-out infinite;
     background-size: 400% 400%;
 }
 
 .location, .temperature{
-    height: 25vh;
-    width: 40%;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    transform: translateY(-40px);
+    justify-content: space-evenly;
+    height: 170px;
 }
 
-.temperature{   
+.temperature{
     flex-direction: column;
 }
+
+.location-timezone{
+    font-size: 32px;
+}
+
 .temperature-description{
-    width: 100%;
+    display: block;
+    font-size: 25px;
     text-align: center;
 }
+
 .degree-section{
     display: flex;
     align-items: center;
     cursor: pointer;
-}
-.degree-section span{
-    margin: 10px;
-    font-size: 30px;
 }
 
 .degree-section h2{
     font-size: 40px;
 }
 
+.degree-section span{
+    margin: 10px;
+    font-size: 32px;
+}
+
 .show{
     opacity: 0;
     transition: 1s ease;
 }
+
 .search-location{
-    transform: translateY(-40px);
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
+
 .search-location #search{
     display: inline-block;
     font-size: 13px;
     padding: 3px;
     border-radius: 6px;
-    text-decoration: none;
     height: 25px;
-    /* transform: translateY(-2px); */
     background-color: rgb(56, 104, 158);
     color: white;
-    box-shadow: 0em;
 }
-.icons{
-    animation: fade 3s ease-in-out infinite;
-}
+
 .search-location #textbox{
     border-radius: 6px;
     text-decoration: none;
@@ -94,6 +93,10 @@ body{
     width: 300px;
     font-size: 15px;
     padding-left: 10px;
+}
+
+.icons{
+    animation: fade 3s ease-in-out infinite;
 }
 
 @keyframes fade{
@@ -124,7 +127,7 @@ body{
 @media screen and (max-width:1200px)
 {    
     .location, .temperature{
-        height: 30vh;
+        height: 160px;
         width: 60%;
     }
 }
