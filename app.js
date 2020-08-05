@@ -58,17 +58,16 @@ document.querySelector('#search').addEventListener('click',()=>{
     $('#result').html('');
     var searchField=$('#textbox').val();
     var expression= new RegExp(searchField,"i");
-    $.getJSON('cities_20000.json',function(data){
+    $.getJSON('cities_all.json',function(data){
         $.each(data,function(key,value){
             if(value.city_name.search(expression) != -1 && check===0){
                 check=1;
                 myfunc(value.lat,value.lon);
             }
-         
-        });
-        if(check===0)
+            if(check=0)
             {
                 $('#result').append('No Results Found');
             }
+        });
     });
 });
