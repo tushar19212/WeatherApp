@@ -189,7 +189,7 @@ canvas{
         /* background-color: pink; */
     }
     .temperature{
-        height: 20vh;
+        height: 23vh;
     }
     .MaxMin{
         flex-direction: column;
