@@ -12,16 +12,16 @@ h1{
 
 .heading{
     position: relative;
-    transition: 1s ease-in-out;
+    transition: all 1s ease;
+    transform: translateY(-12px);
 }
 
 .h1After{
     color: white;
     text-align: center;
-    margin: 30px;
-    margin-top: 10px;
+    margin: 20px;
+    margin-top: 40px;
     transition: .5s ease ;
-
 }
 
 body{
@@ -55,10 +55,14 @@ canvas{
     font-size: 32px;
 }
 
+.translateY{
+    transform: translateY(30px);
+}
+
 #canvas{
     margin: 0 auto;
     text-align: center;
-    width: 98%;
+    width: 95%;
     /* padding: 20px; */
 }
 
@@ -174,8 +178,30 @@ canvas{
 
 @media screen and (max-width:1200px)
 {    
+    .heading{
+        height: 3vh;
+    }
     .location, .temperature{
-        height: 160px;
         width: 60%;
+    }
+    .location{
+        height: 10vh;
+        /* background-color: pink; */
+    }
+    .temperature{
+        height: 20vh;
+    }
+    .MaxMin{
+        flex-direction: column;
+        transform: translateY(30px);
+    }
+    .MaxMin div{
+        margin: 10px;
+    }
+    .MaxMin h3{
+        font-size: 30px;
+    }
+    .MaxMin h3{
+        font-size: 25px;
     }
 }

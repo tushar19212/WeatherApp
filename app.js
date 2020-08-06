@@ -28,11 +28,10 @@ async function getData(latvalue,longvalue){
 }
 
 function myfunc(latvalue,longvalue){
-    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=1&key=e3ce543b242141de941a30386d48d39a`;
+    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=1&key=00126960a606435b88e10e9fbab75b1b`;
     fetch(api).then(response => {
             return response.json();
     }).then(data =>{
-        // console.log(data);
         const {city_name} = data;
         const {temp, min_temp, max_temp}=data.data[0];
         celsius=temp;
@@ -51,7 +50,7 @@ function myfunc(latvalue,longvalue){
             x[i].style.opacity = "1";
         }
         document.querySelector('.h1After').style.opacity="0";
-        document.querySelector('.heading').style.top="30px";
+        document.querySelector('.heading').classList.add('translateY');
        
     });
 }
