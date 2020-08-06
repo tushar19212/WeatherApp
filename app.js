@@ -14,7 +14,7 @@ let days = [];
 let temps = [];
 
 async function getData(latvalue,longvalue){
-    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=10&key=e3ce543b242141de941a30386d48d39a`;
+    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=10&key=00126960a606435b88e10e9fbab75b1b`;
     const response = await fetch(api);
     const data = await response.json(); 
     console.log(data);
