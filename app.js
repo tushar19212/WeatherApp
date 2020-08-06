@@ -17,42 +17,29 @@ async function getData(latvalue,longvalue){
     const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=10&key=e3ce543b242141de941a30386d48d39a`;
     const response = await fetch(api);
     const data = await response.json(); 
-    console.log(data);
     for(let i=0;i<10;i++)
     {
         days.push(data.data[i].valid_date);
         temps.push(data.data[i].temp);
     }
-    console.log(days);
-    console.log(temps);
-}
-
-function myfunc(latvalue,longvalue){
-    const api = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latvalue}&lon=${longvalue}&days=1&key=00126960a606435b88e10e9fbab75b1b`;
-    fetch(api).then(response => {
-            return response.json();
-    }).then(data =>{
-        const {city_name} = data;
-        const {temp, min_temp, max_temp}=data.data[0];
-        celsius=temp;
-        const {description,icon}=data.data[0].weather;
-        //Set DOM Elements
-        temperatureDegree.textContent = temp;
-        minTemp.textContent = min_temp;
-        maxTemp.textContent = max_temp;
-        temperatureDescription.textContent = description;
-        locationTimezone.textContent = city_name;
-        // minTemp.textContent = 
-        Icon.src="icons/"+icon+".png";
-        var x,i;
-        x=document.querySelectorAll('.show');
-        for (i = 0; i < x.length; i++) {
-            x[i].style.opacity = "1";
-        }
-        document.querySelector('.h1After').style.opacity="0";
-        document.querySelector('.heading').classList.add('translateY');
-       
-    });
+    const {city_name} = data;
+    const {temp, min_temp, max_temp}=data.data[0];
+    celsius=temp;
+    const {description,icon}=data.data[0].weather;
+    //Set DOM Elements
+    temperatureDegree.textContent = temp;
+    minTemp.textContent = min_temp;
+    maxTemp.textContent = max_temp;
+    temperatureDescription.textContent = description;
+    locationTimezone.textContent = city_name;
+    Icon.src="icons/"+icon+".png";
+    var x,i;
+    x=document.querySelectorAll('.show');
+    for (i = 0; i < x.length; i++) {
+        x[i].style.opacity = "1";
+    }
+    document.querySelector('.h1After').style.opacity="0";
+    document.querySelector('.heading').classList.add('translateY');
 }
 
 window.addEventListener('load', ()=>{
@@ -60,7 +47,6 @@ window.addEventListener('load', ()=>{
         navigator.geolocation.getCurrentPosition(position => {
             lat=position.coords.latitude;
             long=position.coords.longitude;
-            myfunc(lat,long);
             chartIt();
         });
     }
