@@ -204,4 +204,7 @@ canvas{
     .MaxMin h3{
         font-size: 25px;
     }
+    #canvas{
+        width: 90%;
+    }
 }
